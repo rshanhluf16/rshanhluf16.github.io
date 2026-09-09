@@ -1,0 +1,33 @@
+---
+title: "Rshan Hluf"
+---
+
+# Welcome to My Website
+
+Hello! 
+My name is Rshan Hluf. 
+Welcome to my personal website.
+
+## About Me
+
+I am a Master of Data Science student at the University of British Columbia and a Mastercard Foundation Scholar, deeply interested in using data and AI to address the root causes of real-world community challenges.
+
+With a bachelor’s degree in Computer Science and Engineering, I have experience in data analytics, AI/ML model development, and programming using Python, R, and SQL.
+
+I am deeply passionate about transforming complex data into actionable insights and developing data-driven solutions that support better decision-making and build stronger communities.
+
+Beyond my technical work, I have volunteer experience in national and international community development. I am also passionate about sustainability, women’s empowerment, and creating opportunities for underserved communities.
+
+As the Founder of the Data for Change initiative and a Sustainability Ambassador at the University of British Columbia, I am committed to connecting data-driven innovation with social and environmental impact.
+
+I strongly believe that data and AI are most powerful when they are used to empower people and create positive change.
+
+My goal is to continue bridging data insights and social impact by modeling data-driven solutions that contribute to a more inclusive, sustainable, and equitable future.
+
+## What I'm Learning
+
+- Python
+- R
+- Git and GitHub
+- Data visualization
+- Quarto
