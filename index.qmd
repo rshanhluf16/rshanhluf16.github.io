@@ -11,20 +11,11 @@ Welcome to my personal website.
 
 ## About Me
 
-I am a Master of Data Science student at the University of British Columbia and a Mastercard Foundation Scholar, deeply interested in using data and AI to address the root causes of real-world community challenges.
+I am a Master of Data Science student at the University of British Columbia and a Mastercard Foundation Scholar, deeply interested in using data and AI to address the root causes of real-world community challenges. In addition to academics, I enjoy exploring new places, spending time in nature, and connecting with people from different backgrounds. 
 
-With a bachelor’s degree in Computer Science and Engineering, I have experience in data analytics, AI/ML model development, and programming using Python, R, and SQL.
+I value community engagement and enjoy participating in activities that allow me to meet new people, learn from different perspectives, and contribute to meaningful causes.
 
-I am deeply passionate about transforming complex data into actionable insights and developing data-driven solutions that support better decision-making and build stronger communities.
-
-Beyond my technical work, I have volunteer experience in national and international community development. I am also passionate about sustainability, women’s empowerment, and creating opportunities for underserved communities.
-
-As the Founder of the Data for Change initiative and a Sustainability Ambassador at the University of British Columbia, I am committed to connecting data-driven innovation with social and environmental impact.
-
-I strongly believe that data and AI are most powerful when they are used to empower people and create positive change.
-
-My goal is to continue bridging data insights and social impact by modeling data-driven solutions that contribute to a more inclusive, sustainable, and equitable future.
-
+I try to maintain a balance between my studies, personal growth, and the things I enjoy outside the classroom. Since moving to Vancouver, I have enjoyed discovering the city and its beautiful outdoor spaces.
 ## What I'm Learning
 
 - Python
