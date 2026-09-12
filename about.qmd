@@ -18,7 +18,7 @@ My goal is to continue bridging data insights and social impact by modeling data
 
 ## Why Data Science
 
-I am interested in using data science understand real-world problems and support better decision-making. I joined the MDS program to strengthen my skills in data analysis, machine learning, and data-driven problem solving.
+I am interested in using data science to understand real-world problems and support better decision-making. I joined the MDS program to strengthen my skills in data analysis, machine learning, and data-driven problem solving.
 
 ## Outside of Data Science
 
