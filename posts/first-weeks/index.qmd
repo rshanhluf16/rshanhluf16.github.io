@@ -1,0 +1,28 @@
+---
+title: "My first weeks in MDS"
+author: "Rshan Hluf"
+date: 2026-09-11
+---
+
+## Starting with Orientation
+
+My first weeks at UBC began before the MDS program officially started. We arrived early to become familiar with the campus and our new surroundings. This gave me some time to settle in and prepare for the journey ahead.
+
+One of the highlights of this period was attending the Mastercard Foundation Scholars Program orientation. It was an exciting opportunity to meet new people, connect with other scholars, and learn more about the community and opportunities available to us.
+
+As the MDS program began on August 31, I was excited to meet my new classmates and learn more about the program. Starting a new academic journey came with both excitement and challenges, but these first experiences helped me feel more connected to UBC and prepared for the intensive months ahead.
+
+
+## Exploring Vancouver
+
+![Visiting Spanish Banks Beach](<spanish-banks.jpeg>){width=500}
+
+Outside the classroom, one of the highlights of my first weeks was visiting Spanish Banks Beach. Spending time there gave me an opportunity to explore Vancouver, enjoy the beautiful surroundings, and take a break from studying.
+
+
+
+## Finding Balance and Looking Forward
+
+The first weeks have also taught me that graduate school is not only about studying. The MDS program moves quickly, so I am learning how important it is to balance education with life outside the classroom. Making time to rest, explore, and connect with others helps me return to my studies with more energy.
+
+I am looking forward to the rest of the MDS journey. I know there will be challenging moments, but I am excited to continue developing my data science skills, learning from the people around me, and enjoying the experiences that come with living and studying in Vancouver.

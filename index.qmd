@@ -7,6 +7,7 @@ title: "Rshan Hluf"
 Hello! 
 My name is Rshan Hluf. 
 Welcome to my personal website.
+![Photo of Rshan](images/photo_2026-04-18_09-44-00.jpg){width=300}
 
 ## About Me
 

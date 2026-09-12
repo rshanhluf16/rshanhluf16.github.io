@@ -1,5 +1,15 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site
+## Background
+
+I have a bachelor's degree in Computer Science and Engineering. Before joining the Master of Data Science program at UBC, I developed experience in data analytics, programming, and community-focused project
+
+## Why Data Science
+
+I am interested in using data science understand real-world problems and support better decision-making. I joined the MDS program to strengthen my skills in data analysis, machine learning, and data-driven problem solving.
+
+## Outside of Data Science
+
+Outside of my studies, I enjoy exploring new places, spending time with friends, and learning about different communities and cultures. Since arriving in Vancouver, I have also enjoyed discovering the city and balancing graduate school with life outside the classroom.
