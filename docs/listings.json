@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/mtcars-analysis/index.html",
       "/posts/iris-analysis/index.html",
       "/posts/first-weeks/index.html"
     ]

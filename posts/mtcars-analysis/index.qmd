@@ -1,0 +1,61 @@
+---
+title: "Exploring Fuel Efficiency with mtcars"
+author: "Rshan Hluf"
+date: today
+format: html
+---
+## Exploring the mtcars Dataset
+
+In this post, I explore the relationship between fuel efficiency, vehicle weight, horsepower, and number of cylinders using R.
+
+The data come from the [`mtcars` dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html), which is included with R and contains information about 32 automobiles from the 1974 *Motor Trend* US magazine.
+## Preparing the Data
+
+```{r}
+#| message: false
+#| warning: false
+
+cars <- mtcars
+cars$cyl <- factor(cars$cyl)
+
+head(cars)
+```
+## Fuel Efficiency by Number of Cylinders
+
+Next, I compare the average miles per gallon for cars with 4, 6, and 8 cylinders.
+
+```{r}
+mean_mpg <- aggregate(mpg ~ cyl, data = cars, FUN = mean)
+mean_mpg
+```
+## Fuel Efficiency and Vehicle Weight
+
+The following figure shows the relationship between vehicle weight and fuel efficiency.
+
+```{r}
+#| label: fig-mpg-weight
+#| fig-cap: "Relationship between vehicle weight and fuel efficiency in the mtcars dataset."
+
+plot(
+  cars$wt,
+  cars$mpg,
+  xlab = "Weight (1000 lbs)",
+  ylab = "Miles per gallon",
+  main = "Fuel Efficiency vs. Vehicle Weight"
+)
+
+abline(lm(mpg ~ wt, data = cars), lwd = 2)
+```
+## Modeling Fuel Efficiency
+
+Finally, I fit a linear regression model to examine how vehicle weight and horsepower are associated with fuel efficiency.
+
+```{r}
+model <- lm(mpg ~ wt + hp, data = cars)
+summary(model)
+```
+## Findings
+
+The results suggest that heavier cars tend to have lower fuel efficiency. In the regression model, vehicle weight has an estimated coefficient of -3.88, meaning that higher weight is associated with lower miles per gallon when horsepower is held constant. Horsepower also has a negative estimated association with fuel efficiency.
+
+The model has an R-squared value of approximately 0.83, indicating that vehicle weight and horsepower together explain about 83% of the variation in miles per gallon among the cars in this dataset. These results describe associations in the `mtcars` data and should not be interpreted as evidence of causation.
