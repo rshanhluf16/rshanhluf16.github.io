@@ -9,7 +9,12 @@ jupyter: python3
 
 In this analysis, I explore the Iris dataset using Python. The goal is to examine the characteristics of the different Iris species and visualize patterns in the data.
 
+Data: [Iris dataset from scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html), originally introduced by R. A. Fisher.
+
 ```{python}
+#| message: false
+#| warning: false
+
 from sklearn.datasets import load_iris
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -26,6 +31,10 @@ df.head()
 ## Sepal Length by Species
 
 ```{python}
+
+#| label: fig-sepal-length
+#| fig-cap: "Sepal length distribution for the three Iris species"
+
 df["species"] = df["target"].map(dict(enumerate(iris.target_names)))
 
 df.boxplot(column="sepal length (cm)", by="species")
