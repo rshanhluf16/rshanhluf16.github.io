@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nRshan Hluf\n\n\n\n\n\nNo matching items"
+    "text": "Iris Flower Analysis\n\n\n\n\n\n\n\n\nSep 22, 2026\n\n\nRshan Hluf\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nRshan Hluf\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -82,5 +82,40 @@
     "title": "About",
     "section": "Outside of Data Science",
     "text": "Outside of Data Science\nOutside of my studies, I enjoy exploring new places, spending time with friends, and learning about different communities and cultures. Since arriving in Vancouver, I have also enjoyed discovering the city and balancing graduate school with life outside the classroom."
+  },
+  {
+    "objectID": "posts/iris-analysis/index.html",
+    "href": "posts/iris-analysis/index.html",
+    "title": "Iris Flower Analysis",
+    "section": "",
+    "text": "In this analysis, I explore the Iris dataset using Python. The goal is to examine the characteristics of the different Iris species and visualize patterns in the data.\n\nfrom sklearn.datasets import load_iris\nimport pandas as pd\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "posts/iris-analysis/index.html#exploring-the-iris-dataset",
+    "href": "posts/iris-analysis/index.html#exploring-the-iris-dataset",
+    "title": "Iris Flower Analysis",
+    "section": "",
+    "text": "In this analysis, I explore the Iris dataset using Python. The goal is to examine the characteristics of the different Iris species and visualize patterns in the data.\n\nfrom sklearn.datasets import load_iris\nimport pandas as pd\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "posts/iris-analysis/index.html#loading-the-data",
+    "href": "posts/iris-analysis/index.html#loading-the-data",
+    "title": "Iris Flower Analysis",
+    "section": "Loading the Data",
+    "text": "Loading the Data\n\niris = load_iris(as_frame=True)\ndf = iris.frame\ndf.head()\n\n\n\n\n\n\n\n\nsepal length (cm)\nsepal width (cm)\npetal length (cm)\npetal width (cm)\ntarget\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\n0\n\n\n1\n4.9\n3.0\n1.4\n0.2\n0\n\n\n2\n4.7\n3.2\n1.3\n0.2\n0\n\n\n3\n4.6\n3.1\n1.5\n0.2\n0\n\n\n4\n5.0\n3.6\n1.4\n0.2\n0"
+  },
+  {
+    "objectID": "posts/iris-analysis/index.html#sepal-length-by-species",
+    "href": "posts/iris-analysis/index.html#sepal-length-by-species",
+    "title": "Iris Flower Analysis",
+    "section": "Sepal Length by Species",
+    "text": "Sepal Length by Species\n\ndf[\"species\"] = df[\"target\"].map(dict(enumerate(iris.target_names)))\n\ndf.boxplot(column=\"sepal length (cm)\", by=\"species\")\nplt.suptitle(\"\")\nplt.title(\"Sepal Length by Iris Species\")\nplt.xlabel(\"Species\")\nplt.ylabel(\"Sepal Length (cm)\")\nplt.show()\n\n\n\n\n\n\n\n\n\nInterpretation\nThe boxplot shows clear differences in sepal length among the three Iris species. Setosa generally has the shortest sepal lengths, virginica has the longest, and versicolor falls between the two. There is some overlap between the distributions, particularly between versicolor and virginica."
+  },
+  {
+    "objectID": "posts/iris-analysis/index.html#petal-length-vs-petal-width",
+    "href": "posts/iris-analysis/index.html#petal-length-vs-petal-width",
+    "title": "Iris Flower Analysis",
+    "section": "Petal Length vs Petal Width",
+    "text": "Petal Length vs Petal Width\n\ndf.plot.scatter(\n    x=\"petal length (cm)\",\n    y=\"petal width (cm)\",\n    c=\"target\",\n    colormap=\"viridis\"\n)\nplt.title(\"Petal Length vs Petal Width\")\nplt.show()\n\n\n\n\n\n\n\n\n\nInterpretation\nThe scatter plot shows a strong positive relationship between petal length and petal width. The three Iris species also form distinct clusters, suggesting that petal measurements are useful for distinguishing between species."
   }
 ]

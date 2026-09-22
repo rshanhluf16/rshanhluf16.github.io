@@ -1,0 +1,58 @@
+---
+title: "Iris Flower Analysis"
+author: "Rshan Hluf"
+date: today
+format: html
+jupyter: python3
+---
+## Exploring the Iris Dataset
+
+In this analysis, I explore the Iris dataset using Python. The goal is to examine the characteristics of the different Iris species and visualize patterns in the data.
+
+```{python}
+from sklearn.datasets import load_iris
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+## Loading the Data
+
+```{python}
+iris = load_iris(as_frame=True)
+df = iris.frame
+df.head()
+```
+
+## Sepal Length by Species
+
+```{python}
+df["species"] = df["target"].map(dict(enumerate(iris.target_names)))
+
+df.boxplot(column="sepal length (cm)", by="species")
+plt.suptitle("")
+plt.title("Sepal Length by Iris Species")
+plt.xlabel("Species")
+plt.ylabel("Sepal Length (cm)")
+plt.show()
+```
+
+### Interpretation
+
+The boxplot shows clear differences in sepal length among the three Iris species. Setosa generally has the shortest sepal lengths, virginica has the longest, and versicolor falls between the two. There is some overlap between the distributions, particularly between versicolor and virginica.
+
+## Petal Length vs Petal Width
+
+```{python}
+df.plot.scatter(
+    x="petal length (cm)",
+    y="petal width (cm)",
+    c="target",
+    colormap="viridis"
+)
+plt.title("Petal Length vs Petal Width")
+plt.show()
+```
+
+### Interpretation
+
+The scatter plot shows a strong positive relationship between petal length and petal width. The three Iris species also form distinct clusters, suggesting that petal measurements are useful for distinguishing between species.
