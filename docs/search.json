@@ -28,6 +28,48 @@
     "text": "Python\nR\nGit and GitHub\nData visualization\nQuarto"
   },
   {
+    "objectID": "posts/mtcars-analysis/index.html",
+    "href": "posts/mtcars-analysis/index.html",
+    "title": "Exploring Fuel Efficiency with mtcars",
+    "section": "",
+    "text": "In this post, I explore the relationship between fuel efficiency, vehicle weight, horsepower, and number of cylinders using R.\nThe data come from the mtcars dataset, which is included with R and contains information about 32 automobiles from the 1974 Motor Trend US magazine. ## Preparing the Data\n\ncars &lt;- mtcars\ncars$cyl &lt;- factor(cars$cyl)\n\nhead(cars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "posts/mtcars-analysis/index.html#exploring-the-mtcars-dataset",
+    "href": "posts/mtcars-analysis/index.html#exploring-the-mtcars-dataset",
+    "title": "Exploring Fuel Efficiency with mtcars",
+    "section": "",
+    "text": "In this post, I explore the relationship between fuel efficiency, vehicle weight, horsepower, and number of cylinders using R.\nThe data come from the mtcars dataset, which is included with R and contains information about 32 automobiles from the 1974 Motor Trend US magazine. ## Preparing the Data\n\ncars &lt;- mtcars\ncars$cyl &lt;- factor(cars$cyl)\n\nhead(cars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "posts/mtcars-analysis/index.html#fuel-efficiency-by-number-of-cylinders",
+    "href": "posts/mtcars-analysis/index.html#fuel-efficiency-by-number-of-cylinders",
+    "title": "Exploring Fuel Efficiency with mtcars",
+    "section": "Fuel Efficiency by Number of Cylinders",
+    "text": "Fuel Efficiency by Number of Cylinders\nNext, I compare the average miles per gallon for cars with 4, 6, and 8 cylinders.\n\nmean_mpg &lt;- aggregate(mpg ~ cyl, data = cars, FUN = mean)\nmean_mpg\n\n  cyl      mpg\n1   4 26.66364\n2   6 19.74286\n3   8 15.10000"
+  },
+  {
+    "objectID": "posts/mtcars-analysis/index.html#fuel-efficiency-and-vehicle-weight",
+    "href": "posts/mtcars-analysis/index.html#fuel-efficiency-and-vehicle-weight",
+    "title": "Exploring Fuel Efficiency with mtcars",
+    "section": "Fuel Efficiency and Vehicle Weight",
+    "text": "Fuel Efficiency and Vehicle Weight\nThe following figure shows the relationship between vehicle weight and fuel efficiency.\n\nplot(\n  cars$wt,\n  cars$mpg,\n  xlab = \"Weight (1000 lbs)\",\n  ylab = \"Miles per gallon\",\n  main = \"Fuel Efficiency vs. Vehicle Weight\"\n)\n\nabline(lm(mpg ~ wt, data = cars), lwd = 2)\n\n\n\n\n\n\n\nFigure 1: Relationship between vehicle weight and fuel efficiency in the mtcars dataset."
+  },
+  {
+    "objectID": "posts/mtcars-analysis/index.html#modeling-fuel-efficiency",
+    "href": "posts/mtcars-analysis/index.html#modeling-fuel-efficiency",
+    "title": "Exploring Fuel Efficiency with mtcars",
+    "section": "Modeling Fuel Efficiency",
+    "text": "Modeling Fuel Efficiency\nFinally, I fit a linear regression model to examine how vehicle weight and horsepower are associated with fuel efficiency.\n\nmodel &lt;- lm(mpg ~ wt + hp, data = cars)\nsummary(model)\n\n\nCall:\nlm(formula = mpg ~ wt + hp, data = cars)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-3.941 -1.600 -0.182  1.050  5.854 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 37.22727    1.59879  23.285  &lt; 2e-16 ***\nwt          -3.87783    0.63273  -6.129 1.12e-06 ***\nhp          -0.03177    0.00903  -3.519  0.00145 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.593 on 29 degrees of freedom\nMultiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 \nF-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12"
+  },
+  {
+    "objectID": "posts/mtcars-analysis/index.html#findings",
+    "href": "posts/mtcars-analysis/index.html#findings",
+    "title": "Exploring Fuel Efficiency with mtcars",
+    "section": "Findings",
+    "text": "Findings\nThe results suggest that heavier cars tend to have lower fuel efficiency. In the regression model, vehicle weight has an estimated coefficient of -3.88, meaning that higher weight is associated with lower miles per gallon when horsepower is held constant. Horsepower also has a negative estimated association with fuel efficiency.\nThe model has an R-squared value of approximately 0.83, indicating that vehicle weight and horsepower together explain about 83% of the variation in miles per gallon among the cars in this dataset. These results describe associations in the mtcars data and should not be interpreted as evidence of causation."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
@@ -117,47 +159,5 @@
     "title": "About",
     "section": "Outside of Data Science",
     "text": "Outside of Data Science\nOutside of my studies, I enjoy exploring new places, spending time with friends, and learning about different communities and cultures. Since arriving in Vancouver, I have also enjoyed discovering the city and balancing graduate school with life outside the classroom."
-  },
-  {
-    "objectID": "posts/mtcars-analysis/index.html",
-    "href": "posts/mtcars-analysis/index.html",
-    "title": "Exploring Fuel Efficiency with mtcars",
-    "section": "",
-    "text": "In this post, I explore the relationship between fuel efficiency, vehicle weight, horsepower, and number of cylinders using R.\nThe data come from the mtcars dataset, which is included with R and contains information about 32 automobiles from the 1974 Motor Trend US magazine. ## Preparing the Data\n\ncars &lt;- mtcars\ncars$cyl &lt;- factor(cars$cyl)\n\nhead(cars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
-  },
-  {
-    "objectID": "posts/mtcars-analysis/index.html#exploring-the-mtcars-dataset",
-    "href": "posts/mtcars-analysis/index.html#exploring-the-mtcars-dataset",
-    "title": "Exploring Fuel Efficiency with mtcars",
-    "section": "",
-    "text": "In this post, I explore the relationship between fuel efficiency, vehicle weight, horsepower, and number of cylinders using R.\nThe data come from the mtcars dataset, which is included with R and contains information about 32 automobiles from the 1974 Motor Trend US magazine. ## Preparing the Data\n\ncars &lt;- mtcars\ncars$cyl &lt;- factor(cars$cyl)\n\nhead(cars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
-  },
-  {
-    "objectID": "posts/mtcars-analysis/index.html#fuel-efficiency-by-number-of-cylinders",
-    "href": "posts/mtcars-analysis/index.html#fuel-efficiency-by-number-of-cylinders",
-    "title": "Exploring Fuel Efficiency with mtcars",
-    "section": "Fuel Efficiency by Number of Cylinders",
-    "text": "Fuel Efficiency by Number of Cylinders\nNext, I compare the average miles per gallon for cars with 4, 6, and 8 cylinders.\n\nmean_mpg &lt;- aggregate(mpg ~ cyl, data = cars, FUN = mean)\nmean_mpg\n\n  cyl      mpg\n1   4 26.66364\n2   6 19.74286\n3   8 15.10000"
-  },
-  {
-    "objectID": "posts/mtcars-analysis/index.html#fuel-efficiency-and-vehicle-weight",
-    "href": "posts/mtcars-analysis/index.html#fuel-efficiency-and-vehicle-weight",
-    "title": "Exploring Fuel Efficiency with mtcars",
-    "section": "Fuel Efficiency and Vehicle Weight",
-    "text": "Fuel Efficiency and Vehicle Weight\nThe following figure shows the relationship between vehicle weight and fuel efficiency.\n\nplot(\n  cars$wt,\n  cars$mpg,\n  xlab = \"Weight (1000 lbs)\",\n  ylab = \"Miles per gallon\",\n  main = \"Fuel Efficiency vs. Vehicle Weight\"\n)\n\nabline(lm(mpg ~ wt, data = cars), lwd = 2)\n\n\n\n\n\n\n\nFigure 1: Relationship between vehicle weight and fuel efficiency in the mtcars dataset."
-  },
-  {
-    "objectID": "posts/mtcars-analysis/index.html#modeling-fuel-efficiency",
-    "href": "posts/mtcars-analysis/index.html#modeling-fuel-efficiency",
-    "title": "Exploring Fuel Efficiency with mtcars",
-    "section": "Modeling Fuel Efficiency",
-    "text": "Modeling Fuel Efficiency\nFinally, I fit a linear regression model to examine how vehicle weight and horsepower are associated with fuel efficiency.\n\nmodel &lt;- lm(mpg ~ wt + hp, data = cars)\nsummary(model)\n\n\nCall:\nlm(formula = mpg ~ wt + hp, data = cars)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-3.941 -1.600 -0.182  1.050  5.854 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 37.22727    1.59879  23.285  &lt; 2e-16 ***\nwt          -3.87783    0.63273  -6.129 1.12e-06 ***\nhp          -0.03177    0.00903  -3.519  0.00145 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.593 on 29 degrees of freedom\nMultiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 \nF-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12"
-  },
-  {
-    "objectID": "posts/mtcars-analysis/index.html#findings",
-    "href": "posts/mtcars-analysis/index.html#findings",
-    "title": "Exploring Fuel Efficiency with mtcars",
-    "section": "Findings",
-    "text": "Findings\nThe results suggest that heavier cars tend to have lower fuel efficiency. In the regression model, vehicle weight has an estimated coefficient of -3.88, meaning that higher weight is associated with lower miles per gallon when horsepower is held constant. Horsepower also has a negative estimated association with fuel efficiency.\nThe model has an R-squared value of approximately 0.83, indicating that vehicle weight and horsepower together explain about 83% of the variation in miles per gallon among the cars in this dataset. These results describe associations in the mtcars data and should not be interpreted as evidence of causation."
   }
 ]

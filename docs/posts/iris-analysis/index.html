@@ -214,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="exploring-the-iris-dataset">Exploring the Iris Dataset</h2>
 <p>In this analysis, I explore the Iris dataset using Python. The goal is to examine the characteristics of the different Iris species and visualize patterns in the data.</p>
 <p>Data: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html">Iris dataset from scikit-learn</a>, originally introduced by R. A. Fisher.</p>
-<div id="343d9e40" class="cell" data-message="false" data-execution_count="1">
+<div id="5c1c8e65" class="cell" data-message="false" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="loading-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-data">Loading the Data</h2>
-<div id="d38c8047" class="cell" data-execution_count="2">
+<div id="48f9edea" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris(as_frame<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> iris.frame</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -320,7 +320,7 @@ Figure&nbsp;1: Sepal length distribution for the three Iris species
 </section>
 <section id="petal-length-vs-petal-width" class="level2">
 <h2 class="anchored" data-anchor-id="petal-length-vs-petal-width">Petal Length vs Petal Width</h2>
-<div id="82ee9f15" class="cell" data-execution_count="4">
+<div id="4b2c9d22" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot.scatter(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"petal length (cm)"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"petal width (cm)"</span>,</span>
